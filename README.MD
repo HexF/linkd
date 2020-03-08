@@ -7,7 +7,7 @@ A simple but powerful selfhosted link shortener service written for Deno
 Start the docker image
 
 ```sh
-$ docker run -p 1336:1336 hexf/linkd
+$ docker run -p 1336:1336 -d hexf/linkd
 ```
 
 Add a url
