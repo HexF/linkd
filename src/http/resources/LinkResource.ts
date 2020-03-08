@@ -25,9 +25,11 @@ export class LinkResource extends Drash.Http.Resource {
         let short = this.request.getUrlQueryParam("short")
 
         if (short) {
-            this.response.body = await config.datastore.getLinkByShortened(short)
-            if(!this.response.body)throw new Drash.Exceptions.HttpException(404, "The requested resource was not found")
-            this.request.body = {...this.response.body, url: this.response.body.fullLink}
+            let link = await config.datastore.getLinkByShortened(short)
+            
+            if(!link)throw new Drash.Exceptions.HttpException(404, "The requested resource was not found")
+            this.response.body = {...link, url: link.fullLink}
+            
         }
         else {
             this.response.body = await config.datastore.getLinks()
