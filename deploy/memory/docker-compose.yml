@@ -1,0 +1,8 @@
+version: "3"
+services:
+  linkd:
+    image: "hexf/linkd"
+    ports:
+      - "1336:1336"
+    env:
+      - LINKD_STORAGEPROVIDER=MEMORY

@@ -1,0 +1,12 @@
+version: "3"
+services:
+  linkd:
+    image: "hexf/linkd"
+    ports:
+      - "1336:1336"
+    env:
+      - LINKD_STORAGEPROVIDER=REDIS
+      - LINKD_REDIS_HOSTNAME=redis
+      - LINKD_REDIS_PORT=6379
+  redis:
+    image: "redis:alpine"
