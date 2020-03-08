@@ -35,7 +35,7 @@ As of now the links are stored in memory, in the future it is planned to add red
 
 ## Todo
 
-* [ ] Redis Data Storage
+* [x] Redis Data Storage
 * [ ] PostgreSQL Data Storage
 * [ ] Frontend UI
 * [ ] Kubernetes Manifest
