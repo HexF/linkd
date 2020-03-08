@@ -5,7 +5,7 @@ import { RedisDatastore } from "./Datastore/RedisDatastore.ts";
 let env = Deno.env()
 
 let config = {
-    url: 'http://localhost:1336',
+    url: env['LINKD_URL'] || 'http://localhost:1336',
     datastore: new MemoryDatastore()
 }
 

@@ -34,16 +34,24 @@ The following persistent data storage options are available, by setting the ENV 
 
 ### Memory (Default)
 
-```
+```env
 LINKD_STORAGEPROVIDER=MEMORY
 ```
 
 ### Redis
 
-```
+```env
 LINKD_STORAGEPROVIDER=REDIS
 LINKD_REDIS_HOSTNAME=localhost
 LINKD_REDIS_PORT=6379
+```
+
+## Other Configuration
+
+Set the Base URL
+
+```env
+LINKD_URL=https://go.hexf.me/
 ```
 
 ## Todo
@@ -53,3 +61,4 @@ LINKD_REDIS_PORT=6379
 * [ ] Frontend UI
 * [ ] Kubernetes Manifest
 * [x] Docker Compose Examples
+
