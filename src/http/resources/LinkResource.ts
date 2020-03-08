@@ -9,7 +9,7 @@ export class LinkResource extends Drash.Http.Resource {
         let full = this.request.getBodyParam('link')
         let short = this.request.getBodyParam('short')
         if (!full) throw new Drash.Exceptions.HttpException(400, "This resource requires the `link` body parameter")
-        if (!short) throw new Drash.Exceptions.HttpException(400, "This resource requires the `short` body parameter")
+        if (!short) short = Math.random().toString(36).substring(7)
 
         let link = new Link(short, full)
         return await config.datastore.addLink(link).then(() => {
@@ -22,20 +22,17 @@ export class LinkResource extends Drash.Http.Resource {
     }
 
     public async GET() {
-        let id = this.request.getUrlQueryParam("id")
         let short = this.request.getUrlQueryParam("short")
         let link: any;
-        if (id) {
-            link = await config.datastore.getLinkById(id)
-        }
-        else if (short) {
+
+        if (short) {
             link = await config.datastore.getLinkByShortened(short)
         }
         else {
             this.response.body = await config.datastore.getLinks()
         }
 
-        if (id || short) {
+        if (short) {
             if (link) this.response.body = link
             else {
                 throw new Drash.Exceptions.HttpException(404, "The requested resource was not found")
