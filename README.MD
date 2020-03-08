@@ -30,8 +30,21 @@ $ curl http://localhost:1336/link?short=github | jq
 
 ## Presistent Data Storage
 
-As of now the links are stored in memory, in the future it is planned to add redis and postgresql to the list of datastore providers.
+The following persistent data storage options are available, by setting the ENV flags as displayed
 
+### Memory (Default)
+
+```
+LINKD_STORAGEPROVIDER=MEMORY
+```
+
+### Redis
+
+```
+LINKD_STORAGEPROVIDER=REDIS
+LINKD_REDIS_HOSTNAME=localhost
+LINKD_REDIS_PORT=6379
+```
 
 ## Todo
 

@@ -1,19 +1,19 @@
 import { MemoryDatastore } from "./Datastore/MemoryDatastore.ts";
 import { RedisDatastore } from "./Datastore/RedisDatastore.ts";
-import { IDatastore } from "./Datastore/IDatastore.ts"
 
 
+let env = Deno.env()
 
 let config = {
     url: 'http://localhost:1336',
     datastore: new MemoryDatastore()
 }
 
-let datastore = 'REDIS'
+let datastore = env['LINKD_STORAGEPROVIDER'] || 'MEMORY'
 
 switch (datastore){
     case 'REDIS':
-        config.datastore = new RedisDatastore()
+        config.datastore = new RedisDatastore(env['LINKD_REDIS_HOSTNAME'] || "localhost", parseInt(env['LINKD_REDIS_PORT'] || "6379"))
         break
     default: 
     case 'MEMORY':
