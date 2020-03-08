@@ -31,3 +31,12 @@ $ curl http://localhost:1336/link?short=github | jq
 ## Presistent Data Storage
 
 As of now the links are stored in memory, in the future it is planned to add redis and postgresql to the list of datastore providers.
+
+
+## Todo
+
+* [ ] Redis Data Storage
+* [ ] PostgreSQL Data Storage
+* [ ] Frontend UI
+* [ ] Kubernetes Manifest
+* [ ] Docker Compose Examples
