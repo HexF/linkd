@@ -9,5 +9,5 @@
     "link": "$input$",
     "short": "$prompt:Shortened Part$"
   },
-  "URL": "http://localhost:1336/$json:shortened$"
+  "URL": "$json:url$"
 }

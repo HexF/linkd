@@ -1,3 +1,5 @@
+import config from "./config.ts";
+
 export class Link {
     public shortened: string;
     public clicks: number;
@@ -7,5 +9,9 @@ export class Link {
         this.shortened = short
         this.clicks = 0
         this.link = link
+    }
+
+    get fullLink(): string {
+        return [config.url, this.shortened].join('/')
     }
 }
