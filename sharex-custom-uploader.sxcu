@@ -1,0 +1,13 @@
+{
+  "Version": "13.0.1",
+  "Name": "LinkD @ localhost:1336",
+  "DestinationType": "URLShortener",
+  "RequestMethod": "PUT",
+  "RequestURL": "http://localhost:1336/link",
+  "Body": "MultipartFormData",
+  "Arguments": {
+    "link": "$input$",
+    "short": "$prompt:Shortened Part$"
+  },
+  "URL": "http://localhost:1336/$json:shortened$"
+}
