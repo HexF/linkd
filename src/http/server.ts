@@ -1,4 +1,4 @@
-import Drash from "https://deno.land/x/drash@v0.35.0/mod.ts";
+import { Drash } from "../deps.ts";
 import { LinkResource } from './resources/LinkResource.ts'
 import { JumpResource } from "./resources/JumpResource.ts";
 

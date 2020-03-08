@@ -1,4 +1,4 @@
-import Drash from "https://deno.land/x/drash@v0.35.0/mod.ts";
+import { Drash } from '../../deps.ts'
 import config from "../../config.ts";
 
 export class JumpResource extends Drash.Http.Resource {
