@@ -5,9 +5,9 @@ export class Link {
     public clicks: number;
     public link: string;
 
-    constructor(short: string, link: string) {
+    constructor(short: string, link: string, clicks:number=0) {
         this.shortened = short
-        this.clicks = 0
+        this.clicks = clicks
         this.link = link
     }
 
