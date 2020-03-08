@@ -2,6 +2,8 @@
 
 ## Route Outline
 
+All API calls are from the /link endpoint
+
 * PUT / - Adds a link
 * GET / - Get all the links
 * GET /?id={id} - Get a specific link by id
