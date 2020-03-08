@@ -22,7 +22,7 @@ switch (datastore){
 }
 
 if(config.url.endsWith('/'))
-    config.url = config.url.slice(-1)
+    config.url = config.url.slice(0,-1)
 
 
 export default config
