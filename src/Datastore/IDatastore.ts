@@ -15,12 +15,6 @@ export interface IDatastore {
     getLinkByShortened(shortened: string): Promise<Link>
 
     /**
-     * Get a link by its id
-     * @param id The id of the link to get
-     */
-    getLinkById(id: number): Promise<Link>
-
-    /**
      * Get all the links in the datastore
      */
     getLinks(): Promise<Array<Link>>

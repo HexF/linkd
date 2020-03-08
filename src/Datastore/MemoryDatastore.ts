@@ -9,9 +9,9 @@ export class MemoryDatastore implements IDatastore {
         return new Promise((resolve, reject) => {
             
 
-            let existing = MemoryDatastore.db.find((v) => v.shortened == link.shortened || v.id == link.id)
-            if (existing) reject(`Conflicting link (id: ${existing.id})`)
-            
+            let existing = MemoryDatastore.db.find((v) => v.shortened == link.shortened)
+            if (existing) reject(`Conflicting link (shortened: ${existing.shortened})`)
+
             MemoryDatastore.db.push(link)
 
             resolve()
@@ -24,13 +24,7 @@ export class MemoryDatastore implements IDatastore {
             else reject("Link not found")
         })
     }
-    getLinkById(id: number): Promise<Link> {
-        return new Promise((resolve, reject) => {
-            let link = MemoryDatastore.db.find((v) => v.id == id)
-            if (link) resolve(link)
-            else reject("Link not found")
-        })
-    }
+   
     getLinks(): Promise<Array<Link>> {
         return new Promise((resolve, reject) => {
             resolve(MemoryDatastore.db)
