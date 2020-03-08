@@ -1,0 +1,25 @@
+
+name: Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build, Tag, Publish Docker
+      uses: HurricanKai/Publish-Docker-Github-Action@1.12.1
+      with:
+        name: hexf/linkd
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        tagging: true
+        snapshot: true
