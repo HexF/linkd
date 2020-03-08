@@ -6,8 +6,7 @@
   "RequestURL": "http://localhost:1336/link",
   "Body": "MultipartFormData",
   "Arguments": {
-    "link": "$input$",
-    "short": "$prompt:Shortened Part$"
+    "link": "$input$"
   },
   "URL": "$json:url$"
 }
