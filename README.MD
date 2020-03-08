@@ -52,4 +52,4 @@ LINKD_REDIS_PORT=6379
 * [ ] PostgreSQL Data Storage
 * [ ] Frontend UI
 * [ ] Kubernetes Manifest
-* [ ] Docker Compose Examples
+* [x] Docker Compose Examples
