@@ -28,7 +28,7 @@ See the clicks
 $ curl http://localhost:1336/link?short=github | jq
 ```
 
-## Presistent Data Storage
+## Persistent Data Storage
 
 The following persistent data storage options are available, by setting the ENV flags as displayed
 
